@@ -76,7 +76,7 @@ const main: Configuration = {
   target: 'electron-main',
   // エントリーファイル（チャンク名の 'main.js' として出力される）
   entry: {
-    main: './src/main.ts',
+    main: './src/main/main.ts',
   },
 };
 
@@ -85,7 +85,7 @@ const preload: Configuration = {
   ...common,
   target: 'electron-preload',
   entry: {
-    preload: './src/preload.ts',
+    preload: './src/main/preload.ts',
   },
 };
 
@@ -96,7 +96,7 @@ const renderer: Configuration = {
   target: 'web',
   entry: {
     // React アプリのエントリーファイル
-    app: './src/web/index.tsx',
+    app: './src/renderer/index.tsx',
   },
   plugins: [
     // CSS を JS へバンドルせず別ファイルとして出力するプラグイン
@@ -107,7 +107,7 @@ const renderer: Configuration = {
      */
     new HtmlWebpackPlugin({
       // テンプレート
-      template: './src/web/index.html',
+      template: './src/renderer/index.html',
     }),
   ],
 };
