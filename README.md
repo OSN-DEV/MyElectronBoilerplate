@@ -1,22 +1,27 @@
 # MyElectronBoilerplate
-React + Typscript + Electron のボイラーテンプレート。基本は参考サイトの記載通りに構築。
-起動が若干遅いのですが、環境構築が比較的容易であることとコマンド１つで起動(単純にスクリプトの設定問題だとは思いますが)できるのが選択の理由。もっと良い方法があれば、移行予定。
-
+2023.12.24
+Qiitaの記事を参考に一から環境構築。レポジトリのソースは「環境構築手順」で作成したもの
 
 # リンク
-* [Electron + React + TypeScript の開発環境構築](https://zenn.dev/sprout2000/articles/5d7b350c2e85bc)
-* [tsconfig.jsonの全オプションを理解する（随時追加中）](https://qiita.com/ryokkkke/items/390647a7c26933940470#include)
-* [[Electron] contextBridgeでセキュアなIPC通信を実現する(TypeScript)](https://zenn.dev/rakim_stayfresh/articles/2928ac74a153a5)
-* [Inter-Process Communication](https://www.electronjs.org/docs/latest/tutorial/ipc)
-* [https://codezine.jp/article/detail/13384?p=3]
-* [「Wijmo（ウィジモ）」とElectron、Reactに、TypeScriptを組み合わせてスムーズなアプリ開発を実現](https://codezine.jp/article/detail/13384?p=3)
-* [Inter-Process Communication](https://www.electronjs.org/docs/latest/tutorial/ipc)
-* [Electron を試す 12 - IPC を contextBridge へ移行する](https://akabeko.me/blog/2020/12/electron-12/)
-* [Electronで1からデスクトップアプリを作り、electron-builderを使ってビルド・リリースするまで](https://qiita.com/saki-engineering/items/203892838e15b3dbd300)
+* [Electron + TypeScript + React + Webpackのプロジェクト作成から基本操作まで](https://qiita.com/uta-member/items/0590bb3832cac9fd41ec)
 
 
 # 環境構築手順
-レポジトリをクローンして npm install を実行するだけ。
+node v20.2.0
+npm 10.2.3
+yarn 1.22.21
+
+## setup
+## react以外をインストール。
+```
+yarn create electron-app my-electron-boilerplate --template=webpack-typescript
+```
+
+## reactをインストール
+```
+yarn add react react-dom
+yarn add --dev @types/react @types/react-dom
+```
 
 
 # レポジトリのファイルを作成した手順
