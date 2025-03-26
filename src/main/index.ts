@@ -80,6 +80,7 @@ app.whenReady().then(() => {
   ipcMain.on('set-title', (ev: IpcMainEvent, title: string) => {
     const webContents = ev.sender
     const win = BrowserWindow.fromWebContents(webContents)
+    console.log(`set title:${title}`)
     win?.setTitle(title)
   })
   
@@ -87,7 +88,7 @@ app.whenReady().then(() => {
   ipcMain.handle('dialog:openFile', openFile)
 
   // Pattern3
-  ipcMain.on('counter-value', (ev: IpcMainEvent, value: number) => {
+  ipcMain.on('counter-value', (_: IpcMainEvent, value: number) => {
     console.log(value)
   })
 
